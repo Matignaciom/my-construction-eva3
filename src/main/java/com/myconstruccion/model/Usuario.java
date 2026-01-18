@@ -2,10 +2,6 @@ package com.myconstruccion.model;
 
 import java.io.Serializable;
 
-/**
- * Clase modelo para representar un Usuario
- * My Construcción - Sistema de Usuarios
- */
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -18,23 +14,14 @@ public class Usuario implements Serializable {
     private String rol;
     private boolean activo;
 
-    /**
-     * Constructor por defecto
-     */
     public Usuario() {
     }
 
-    /**
-     * Constructor con parámetros básicos
-     */
     public Usuario(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    /**
-     * Constructor completo
-     */
     public Usuario(int id, String username, String password, String nombre,
             String email, String rol, boolean activo) {
         this.id = id;
@@ -45,8 +32,6 @@ public class Usuario implements Serializable {
         this.rol = rol;
         this.activo = activo;
     }
-
-    // Getters y Setters
 
     public int getId() {
         return id;

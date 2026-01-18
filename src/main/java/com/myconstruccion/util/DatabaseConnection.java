@@ -6,15 +6,10 @@ import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Clase utilitaria para gestionar la conexión a la base de datos MySQL
- * My Construcción - Database Connection Manager
- */
 public class DatabaseConnection {
 
     private static final Logger logger = LogManager.getLogger(DatabaseConnection.class);
 
-    // Configuración de la base de datos
     private static final String DB_URL = "jdbc:mysql://localhost:3306/myconstruccion";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
@@ -22,18 +17,9 @@ public class DatabaseConnection {
 
     private static Connection connection = null;
 
-    /**
-     * Constructor privado para evitar instanciación
-     */
     private DatabaseConnection() {
     }
 
-    /**
-     * Obtiene una conexión a la base de datos
-     * 
-     * @return Connection objeto de conexión
-     * @throws SQLException si hay error de conexión
-     */
     public static Connection getConnection() throws SQLException {
         try {
             if (connection == null || connection.isClosed()) {
@@ -51,9 +37,6 @@ public class DatabaseConnection {
         return connection;
     }
 
-    /**
-     * Cierra la conexión a la base de datos
-     */
     public static void closeConnection() {
         if (connection != null) {
             try {
@@ -65,11 +48,6 @@ public class DatabaseConnection {
         }
     }
 
-    /**
-     * Prueba la conexión a la base de datos
-     * 
-     * @return true si la conexión es exitosa
-     */
     public static boolean testConnection() {
         try {
             Connection conn = getConnection();

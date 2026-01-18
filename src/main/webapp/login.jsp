@@ -12,7 +12,6 @@
 
         <body>
 
-            <!-- Header -->
             <header class="header">
                 <a href="index.jsp" class="logo">My<span>Construcción</span></a>
                 <nav>
@@ -23,19 +22,16 @@
                 </nav>
             </header>
 
-            <!-- Login Container -->
             <div class="login-container">
                 <form class="login-form" action="login" method="POST">
                     <h2>Iniciar Sesión</h2>
 
-                    <!-- Mensaje de Error -->
                     <c:if test="${not empty error}">
                         <div class="alert alert-error">
                             ${error}
                         </div>
                     </c:if>
 
-                    <!-- Mensaje de Éxito -->
                     <c:if test="${not empty success}">
                         <div class="alert alert-success">
                             ${success}
@@ -63,7 +59,6 @@
                 </form>
             </div>
 
-            <!-- Footer -->
             <footer class="footer">
                 <p>&copy; 2026 My Construcción. Todos los derechos reservados.</p>
             </footer>

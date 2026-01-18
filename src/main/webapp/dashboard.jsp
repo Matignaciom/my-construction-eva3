@@ -12,12 +12,10 @@
 
         <body>
 
-            <!-- Verificar sesión -->
             <c:if test="${empty sessionScope.usuario}">
                 <c:redirect url="login.jsp" />
             </c:if>
 
-            <!-- Header -->
             <header class="header">
                 <a href="index.jsp" class="logo">My<span>Construcción</span></a>
                 <nav>
@@ -28,7 +26,6 @@
                 </nav>
             </header>
 
-            <!-- Dashboard Content -->
             <div class="container dashboard">
                 <div class="welcome-message">
                     <h2>¡Bienvenido, ${sessionScope.usuario}!</h2>
@@ -64,7 +61,6 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <footer class="footer">
                 <p>&copy; 2026 My Construcción. Todos los derechos reservados.</p>
             </footer>

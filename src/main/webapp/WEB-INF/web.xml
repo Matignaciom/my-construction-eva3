@@ -8,17 +8,14 @@
     <display-name>My Construcción - Sistema Web</display-name>
     <description>Sistema de registro de ventas y obras para My Construcción</description>
     
-    <!-- Página de Bienvenida -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     
-    <!-- Configuración de Sesión -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
     
-    <!-- Página de Error -->
     <error-page>
         <error-code>404</error-code>
         <location>/error.jsp</location>

@@ -1,10 +1,6 @@
-// Jenkinsfile - Pipeline CI/CD para My Construcción
-// Este archivo define el proceso de construcción automatizado con Jenkins
-
 pipeline {
     agent any
     
-    // Variables de entorno
     environment {
         JAVA_HOME = tool 'JDK11'
         MAVEN_HOME = tool 'Maven3'
@@ -14,17 +10,14 @@ pipeline {
         VERSION = '1.0.0'
     }
     
-    // Opciones del pipeline
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
         timeout(time: 30, unit: 'MINUTES')
     }
     
-    // Etapas del Pipeline
     stages {
         
-        // Etapa 1: Checkout del código fuente
         stage('Checkout') {
             steps {
                 echo '📥 Descargando código fuente desde repositorio...'
@@ -32,7 +25,6 @@ pipeline {
             }
         }
         
-        // Etapa 2: Compilación del proyecto
         stage('Build') {
             steps {
                 echo '🔨 Compilando proyecto Maven...'
@@ -46,7 +38,6 @@ pipeline {
             }
         }
         
-        // Etapa 3: Ejecución de pruebas
         stage('Test') {
             steps {
                 echo '🧪 Ejecutando pruebas unitarias...'
@@ -59,7 +50,6 @@ pipeline {
             }
         }
         
-        // Etapa 4: Empaquetado WAR
         stage('Package') {
             steps {
                 echo '📦 Generando archivo WAR...'
@@ -73,7 +63,6 @@ pipeline {
             }
         }
         
-        // Etapa 5: Análisis de código (opcional)
         stage('Code Analysis') {
             steps {
                 echo '🔍 Analizando calidad del código...'
@@ -81,12 +70,10 @@ pipeline {
             }
         }
         
-        // Etapa 6: Publicar a JFrog Artifactory
         stage('Deploy to Artifactory') {
             steps {
                 echo '🚀 Publicando artefacto a JFrog Artifactory...'
                 script {
-                    // Configuración de Artifactory
                     def server = Artifactory.server 'artifactory-server'
                     
                     def uploadSpec = """{
@@ -104,7 +91,6 @@ pipeline {
         }
     }
     
-    // Acciones post-ejecución
     post {
         success {
             echo '🎉 Pipeline ejecutado exitosamente!'

@@ -12,12 +12,10 @@
 
         <body>
 
-            <!-- Header -->
             <header class="header">
                 <a href="index.jsp" class="logo">My<span>Construcción</span></a>
             </header>
 
-            <!-- Error Content -->
             <div class="login-container">
                 <div class="login-form" style="text-align: center;">
                     <div class="service-icon">⚠️</div>
@@ -29,7 +27,6 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <footer class="footer">
                 <p>&copy; 2026 My Construcción. Todos los derechos reservados.</p>
             </footer>
