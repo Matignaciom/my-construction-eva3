@@ -90,7 +90,3 @@ El archivo WAR se genera en: `target/my-construccion.war`
 ## 📄 Licencia
 
 Este proyecto fue desarrollado para fines educativos - EVA 3 Automatización de Pruebas.
-
----
-
-*Desarrollado para My Construcción © 2026*
